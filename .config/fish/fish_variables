@@ -7,4 +7,4 @@ SETUVAR _fisher_jorgebucaran_2F_nvm_2E_fish_files:\x7e/\x2econfig/fish/functions
 SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ejorgebucaran/nvm\x2efish
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_color_operator:2b5f5b
-SETUVAR fish_user_paths:/home/qayiran/ilo\x1e/home/qayiran/\x2epyenv/bin\x1e/home/qayiran/\x2elocal/bin
+SETUVAR fish_user_paths:/home/qayiran/\x2egrok/bin\x1e/home/qayiran/ilo\x1e/home/qayiran/\x2epyenv/bin\x1e/home/qayiran/\x2elocal/bin

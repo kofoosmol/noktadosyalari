@@ -245,3 +245,4 @@ alias atgöy="hyprshutdown -t 'Restarting...' --post-cmd 'reboot'"
 
 # Force a success exit code so Qayiran doesn't panic!
 true
+

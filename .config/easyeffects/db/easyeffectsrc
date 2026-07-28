@@ -15,7 +15,6 @@ visiblePlugin=stereo_tools#0
 
 [Window]
 autostartOnLogin=true
-height=467
-visiblePage=inputPage
+height=949
 visiblePipeWirePage=modulesPage
-width=781
+width=1576

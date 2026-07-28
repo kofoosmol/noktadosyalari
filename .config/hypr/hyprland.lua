@@ -38,6 +38,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("steam -silent")
     hl.exec_cmd("xrdb -merge ~/.Xresources")
     hl.exec_cmd("vesktop --start-minimized")
+    -- hl.exec_cmd("~/ilo/sleep_monitor.fish &")
 
     -- Temalandırma
     hl.exec_cmd("gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'")
@@ -304,10 +305,7 @@ hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = tr
 
 -- Resim & Video Kaydı
 hl.bind("Print", hl.dsp.exec_cmd("sh -c 'grim -g \"$(slurp)\" - | tee \"$HOME/sitelen/$(date +%Y-%m-%d_%H-%M-%S).png\" | wl-copy -t image/png'"))
-hl.bind(mainMod .. " + ALT + R", hl.dsp.exec_cmd("$HOME/.local/bin/record-toggle"))
-hl.bind(mainMod .. " + SHIFT + ALT + R", hl.dsp.exec_cmd("$HOME/.local/bin/record-toggle mic"))
-
--- -- Resim & Video Kaydı
+hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("$HOME/.local/bin/record-toggle"))
 hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("$HOME/ilo/save_pin.fish"))
 
 
