@@ -141,8 +141,6 @@ alias up='paru && date +%s > ~/.config/fish/.last_update_check'
 
 alias comfy="cd ~/qayiran/ijo/YZ/ComfyUI; source .venv/bin/activate.fish; python main.py"
 
-alias comfy-net="cd ~/qayiran/ijo/YZ/ComfyUI; source .venv/bin/activate.fish; python main.py --listen 0.0.0.0"
-
 function waifu
     # 'nohup' prevents the app from dying if you eventually close the terminal
     # '>/dev/null 2>&1' hides all the annoying GTK warnings from your screen
@@ -247,11 +245,3 @@ alias atgöy="hyprshutdown -t 'Restarting...' --post-cmd 'reboot'"
 
 # Force a success exit code so Qayiran doesn't panic!
 true
-
-# >>> grok installer >>>
-fish_add_path $HOME/.grok/bin
-# <<< grok installer <<<
-
-
-# Added by Antigravity CLI installer
-set -gx PATH "/home/qayiran/.local/bin" $PATH

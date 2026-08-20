@@ -1,25 +1,25 @@
-function ubitlocker --description 'Safely unmounts and locks the Bitlocker drive'
-    set -l decrypt_path "/mnt/bitlocker"
+function ubitlocker --description 'Safely unmounts and locks the Bitlocker drive via cryptsetup'
     set -l mount_path "$HOME/wan/bitlocker_mount"
+    set -l mapper_name "bibbul_bitlocker"
 
     echo "Temizlik yapılıyor... Diski çıkarmayın."
 
-    # 1. Unmount the user-accessible loop mount
+    # 1. Unmount the file system
     if mountpoint -q $mount_path
         echo "Disk sökülüyor..."
-        sudo umount $mount_path
+        :3 umount $mount_path
     else
         echo "Bindirilmiş bir yol bulunamadı."
     end
 
-    # 2. Unmount the dislocker decryption layer
-    if mountpoint -q $decrypt_path
+    # 2. Lock the cryptsetup layer
+    # We check if the block device actually exists before trying to close it
+    if test -b "/dev/mapper/$mapper_name"
         echo "Bitlocker taşıyıcısı kilitleniyor..."
-        sudo umount $decrypt_path
+        :3 cryptsetup close $mapper_name
     else
-        # Sometimes dislocker needs a lazy unmount if FUSE is being stubborn
-        sudo umount -l $decrypt_path 2>/dev/null
+        echo "Açık bir Bitlocker taşıyıcısı zaten yok."
     end
 
-    echo "Disk söküldü."
+    echo "Disk söküldü ve kilitlendi. ✨"
 end
